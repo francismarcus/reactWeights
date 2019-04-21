@@ -14,7 +14,7 @@ export default function Forms(props) {
     // Todo: MOVE ELSEWHERE
     const excercises = [
         {
-            name: 'Bench Press (from Bench 1RM',
+            name: 'Bench Press',
             ratio: BenchPress1RM * 1.0,
         }, {
             name: 'Close-Grip Bench Press',
@@ -102,6 +102,11 @@ export default function Forms(props) {
         setBenchPress1RM('')
     }
 
+    const Information = (
+        <h5 class="ui header">  Calculate weights for the most common excercises by using your Squat and Benchpress as a reference lift for your lower and upper body strength. 
+        <br /> Use 2-5RM ideally to gauge you 1RM from the calculation. Higher reps can be entered with decreasing accuracy.</h5> 
+    )
+
     return (
           <>
             {BenchPress1RM && Squat1RM !== "" ? (
@@ -124,6 +129,7 @@ export default function Forms(props) {
               </div>
             ) : (
               <form class="ui form" onSubmit={handleSubmit}>
+                {Information} 
                 <div class="two fields">
                   <div class="field">
                     <label>I squat </label>
@@ -151,7 +157,7 @@ export default function Forms(props) {
                     <label>I benchpress </label>
                     <input
                       type="number"
-                      placeholder="e.g. 120"
+                      placeholder="e.g. 90"
                       value={BenchWeight}
                       onChange={handleBenchWeightChange}
                     />
