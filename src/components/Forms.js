@@ -1,5 +1,9 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 
+/**
+* @props {function} Get1RM- Sets the state of parent component  => Squat1RM, BenchPress1RM, Values: true
+* @props {function} setInitialRMValues - Sets the state of parent component (excercises)
+*/
 export default function Forms(props) {
 
     const [SquatReps, setSquatReps] = useState('');
@@ -83,7 +87,7 @@ export default function Forms(props) {
 
     const handleSubmit = event => {
         event.preventDefault();
-        
+
         if (Squat1RM && BenchPress1RM !== '')
       setProps();
      else setRM();
@@ -103,8 +107,8 @@ export default function Forms(props) {
     }
 
     const Information = (
-        <h5 class="ui header">  Calculate weights for the most common excercises by using your Squat and Benchpress as a reference lift for your lower and upper body strength. 
-        <br /> Use 2-5RM ideally to gauge you 1RM from the calculation. Higher reps can be entered with decreasing accuracy.</h5> 
+        <h5 class="ui header">  Calculate weights for the most common excercises by using your Squat and Benchpress as a reference lift for your lower and upper body strength.
+        <br /> Use 2-5RM ideally to gauge you 1RM from the calculation. Higher reps can be entered with decreasing accuracy.</h5>
     )
 
     return (
@@ -121,7 +125,7 @@ export default function Forms(props) {
                   <i class="left arrow icon" />
                   Back
                 </button>
-      
+
                 <button class="ui right labeled icon button" onClick={handleSubmit}>
                   <i class="right arrow icon" />
                   Next
@@ -129,7 +133,7 @@ export default function Forms(props) {
               </div>
             ) : (
               <form class="ui form" onSubmit={handleSubmit}>
-                {Information} 
+                {Information}
                 <div class="two fields">
                   <div class="field">
                     <label>I squat </label>
@@ -140,7 +144,7 @@ export default function Forms(props) {
                       onChange={handleSquatWeightChange}
                     />
                   </div>
-      
+
                   <div class="field">
                     <label>for </label>
                     <input
@@ -151,7 +155,7 @@ export default function Forms(props) {
                     />
                   </div>
                 </div>
-      
+
                 <div class="two fields">
                   <div class="field">
                     <label>I benchpress </label>
@@ -162,7 +166,7 @@ export default function Forms(props) {
                       onChange={handleBenchWeightChange}
                     />
                   </div>
-      
+
                   <div class="field">
                     <label>for</label>
                     <input
@@ -181,7 +185,7 @@ export default function Forms(props) {
             )}
           </>
       );
-      
+
 
 
 

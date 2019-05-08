@@ -36,11 +36,14 @@ class App extends Component {
               InitialValues={this.state.InitialValues}
             />
           ) : (
+            <div className="Content">
             <Forms
               Get1RM={this.Get1RM}
               setInitialRMValues={this.setInitialRMValues}
             />
+          </div>
           )}
+
         </div>
       </>
     );

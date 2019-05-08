@@ -1,5 +1,12 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
+/**
+ * @props {Number} Squat1RM - State passed from components/forms 
+ * @props {Number} BenchPress1RM - State passed from components/forms 
+ * @props {Array} InitialValues - {name, ratio}
+ * @InitialValues {string} name - Name of the excercise
+ * @InitialValues {number} ratio - 1RM of the excercise
+ */
 export default function List(props) {
 
     const [Squat1RM, setSquat1RM] = useState();
